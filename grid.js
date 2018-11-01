@@ -6,17 +6,14 @@ function Grid(x, y, col, draw) {
   this.color = col;
 
   this.update = function() {
-    if (shaapes[5].toggle) {
-      this.x += shaapes[5].gridgridX + shaapes[5].gridgridX*2;
-      this.y += shaapes[5].gridgridY + shaapes[5].gridgridY*2;
-    } else {
-      this.x += shaapes[5].gridgridX;
-      this.y += shaapes[5].gridgridY;
-    }
+    // if (shaapes[5].state) {
+    //   grid.x == grid.x + shaapes[5].gridX;
+    //   grid.y == grid.y + shaapes[5].gridY;
+    // }
   }
 
   this.getPos = function(coordinate, amount) {
-    (coordinate - coordinate%amount) / amount +1;
+    return (coordinate - coordinate%amount) / amount +1;
   }
 
   this.draw = function() {
@@ -35,6 +32,6 @@ function Grid(x, y, col, draw) {
   }
 
   this.debug = function(shapeNum) {
-    console.log("gridW: ", grid.W, " gridH: ", grid.H);
+    console.log("gridW: ", grid.W, " gridH: ", grid.H ," x: ", this.x," y: ", this.y);
   }
 }
